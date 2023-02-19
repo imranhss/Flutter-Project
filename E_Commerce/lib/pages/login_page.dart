@@ -76,6 +76,7 @@ class _LoginPageState extends State<LoginPage> {
                         this.name = value;
                         // Reload the UI
                         setState(() {});
+                        
                       },
 
                     ),
