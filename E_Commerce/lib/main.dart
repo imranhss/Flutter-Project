@@ -1,4 +1,5 @@
 import 'package:e_commerce/util/route.dart';
+import 'package:e_commerce/widget/themes.dart';
 import 'package:flutter/material.dart';
 import 'pages/home_page.dart';
 import 'pages/login_page.dart';
@@ -16,16 +17,8 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
 
       themeMode: ThemeMode.light,
-      theme: ThemeData(
-        primarySwatch: Colors.deepPurple,
-        fontFamily: GoogleFonts.lato().fontFamily,
-        // primaryTextTheme: GoogleFonts.latoTextTheme(),
-
-      ),
-      darkTheme: ThemeData(
-          brightness: Brightness.dark,
-        // primarySwatch: Colors.red,
-      ),
+      theme: MyThemes.lightTheme(context),
+      darkTheme: MyThemes.darkTheme(context),
 
       initialRoute: "/login",
       routes:{
