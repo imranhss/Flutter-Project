@@ -13,6 +13,7 @@ class MyThemes{
           ),
           titleTextStyle: TextStyle(
             color: Colors.black,
+
           ),
 ),
 // primaryTextTheme: GoogleFonts.latoTextTheme(),
