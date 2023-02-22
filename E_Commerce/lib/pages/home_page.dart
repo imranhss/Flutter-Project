@@ -78,7 +78,17 @@ class _HomePageState extends State<HomePage> {
                     fit: BoxFit.cover,
                       height: 50,
                     ),
-                    footer: Text(it.price.toString()),
+                    footer: Container(
+                        child: Text("Price \$ ${it.price.toString()}",
+                          style: TextStyle(
+                          color: Colors.white,
+                        ),
+                        ),
+                      padding: EdgeInsets.all(12.0),
+                      decoration: BoxDecoration(
+                        color: Colors.black,
+                      ),
+                    ),
                   ),
                 );
               })
