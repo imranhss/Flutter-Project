@@ -20,7 +20,27 @@ class HomeDetailPage extends StatelessWidget {
           children: [
             Hero(
                 tag: Key(catalog.id.toString()),
-                child: Image.network(catalog.image)),
+                child: Image.network(catalog.image)
+            ).h32(context),
+            Expanded(
+                child: VxArc(
+                  height: 30.0,
+                  arcType: VxArcType.CONVEY,
+                  edge: VxEdge.TOP,
+                  child: Container(
+                    color: Colors.white,
+                    width: context.screenWidth,
+                    child: Column(
+                      children: [
+                        30.heightBox,
+                        catalog.name.text.xl2.color(MyThemes.darkBluish).bold.make(),
+                        catalog.desc.text.textStyle(context.captionStyle).make(),
+                        10.heightBox,
+                      ],
+                    ).py32(),
+                  ),
+                )
+            )
           ],
         ),
       ),
