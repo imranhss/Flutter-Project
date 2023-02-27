@@ -57,7 +57,7 @@ class _HomePageState extends State<HomePage> {
               children: [
                 CatalogHeader(),
                 if (CatalogModel.item != null && CatalogModel.item.isNotEmpty)
-                  CatalogList().expand()
+                  CatalogList().p16().expand()
                 else
                   CircularProgressIndicator().centered().py16().expand(),
               ],
@@ -143,7 +143,7 @@ class CatalogItem extends StatelessWidget {
                     child: "Buy".text.make(),
                   )
                 ],
-              ),
+              ).pOnly(right: 8.0),
             ],
           ))
         ],
