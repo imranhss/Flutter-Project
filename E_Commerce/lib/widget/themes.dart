@@ -37,10 +37,9 @@ class MyThemes {
           iconTheme: IconThemeData(
             color: Colors.black,
           ),
-          titleTextStyle: TextStyle(
-            color: Colors.black,
-          ),
-        ),
+          textTheme: Theme.of(context).textTheme.copyWith(
+            headline6: context.textTheme.headline6?.copyWith(color: Colors.white)),
+        )
 // primaryTextTheme: GoogleFonts.latoTextTheme(),
       );
 
