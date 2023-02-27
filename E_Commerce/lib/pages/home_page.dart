@@ -1,3 +1,4 @@
+import 'package:e_commerce/util/route.dart';
 import 'package:e_commerce/widget/drawer.dart';
 import 'package:e_commerce/pages/home_detail_page.dart';
 import 'package:e_commerce/widget/item_widget.dart';
@@ -46,6 +47,11 @@ class _HomePageState extends State<HomePage> {
 
     return Scaffold(
         backgroundColor: MyThemes.creamColor,
+        floatingActionButton: FloatingActionButton(
+          backgroundColor: MyThemes.darkBluish,
+          onPressed: ()=>Navigator.pushNamed(context, MyRoute.cartRoute),
+          child: Icon(CupertinoIcons.cart),
+        ),
         appBar: AppBar(
           title: Text("Hotel Rents"),
         ),
@@ -140,7 +146,7 @@ class CatalogItem extends StatelessWidget {
                     onPressed: () => {print(catalog.name)},
                     style: ButtonStyle(
                         shape: MaterialStateProperty.all(StadiumBorder())),
-                    child: "Buy".text.make(),
+                    child: "Add To Cart".text.make(),
                   )
                 ],
               ).pOnly(right: 8.0),
