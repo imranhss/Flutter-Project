@@ -1,12 +1,8 @@
+import 'package:e_commerce/core/store.dart';
 import 'package:e_commerce/models/catalog.dart';
+import "package:velocity_x/velocity_x.dart";
 
 class CartModel {
-
-  static final cartModel = CartModel._internal(); // internal is used for making singletone object
-
-  CartModel._internal();
-
-  factory CartModel() => cartModel;
 
   // catalog fieldlate
   late CatalogModel _catalog;
@@ -39,5 +35,27 @@ class CartModel {
 
   void remove(Item item) {
     _itemIds.remove(item.id);
+  }
+}
+
+
+class AddMutation extends VxMutation<MyStore> {
+  final Item item;
+
+  AddMutation(this.item);
+  @override
+  perform() {
+    store?.cart?._itemIds.add(item.id);
+  }
+}
+
+
+class RemoveMutation extends VxMutation<MyStore> {
+  final Item item;
+
+  RemoveMutation(this.item);
+  @override
+  perform() {
+    store?.cart?._itemIds.remove(item.id);
   }
 }
