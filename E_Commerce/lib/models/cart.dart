@@ -1,6 +1,13 @@
 import 'package:e_commerce/models/catalog.dart';
 
 class CartModel {
+
+  static final cartModel = CartModel._internal(); // internal is used for making singletone object
+
+  CartModel._internal();
+
+  factory CartModel() => cartModel;
+
   // catalog fieldlate
   late CatalogModel _catalog;
 
