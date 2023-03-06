@@ -88,6 +88,8 @@ class _CartList extends StatelessWidget {
           },
         ),
         title: _cart.items[index].name.text.make(),
+
+        
       ),
     );
   }
